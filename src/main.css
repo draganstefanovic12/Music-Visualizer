@@ -27,12 +27,9 @@ a {
 @media (min-width: 768px) {
   :root {
     font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
-
-    /* Safari resize fix */
-    min-height: 0vw;
   }
 }
-/* Prevent scaling beyond this breakpoint */
+/* Prevent scaling from this point */
 @media (min-width: 1920px) {
   :root {
     font-size: 24px;

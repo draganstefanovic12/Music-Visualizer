@@ -1,13 +1,11 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
 type TokenContextProps = {
-  username?: string | undefined;
   token?: string | undefined;
   dispatch: React.Dispatch<ActionType>;
 };
 
-type User = {
-  username: string;
+type Token = {
   token: string;
 } | null;
 
@@ -15,22 +13,25 @@ type ProviderProps = {
   children: ReactNode;
 };
 
+type ActionType = { type: "LOGIN"; payload: string } | { type: "LOGOUT" };
+
 const TokenContext = createContext({} as TokenContextProps);
 
 export const useToken = () => {
   return useContext(TokenContext);
 };
 
-const initialState = {} as User;
+const initialState = {} as Token;
 
-type ActionType = { type: "LOGIN"; payload: string } | { type: "LOGOUT" };
+//Wrote the reducer because originally I planned to include user info here
+//But there's no need because there's only 1 page.
 
-const tokenReducer = (user: typeof initialState, action: ActionType) => {
+const tokenReducer = (token: typeof initialState, action: ActionType) => {
   switch (action.type) {
     case "LOGIN":
-      return (user = { ...user, token: action.payload, username: "" });
+      return (token = { ...token, token: action.payload });
     case "LOGOUT":
-      return (user = null);
+      return (token = null);
   }
 };
 

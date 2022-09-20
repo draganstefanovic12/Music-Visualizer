@@ -10,6 +10,7 @@ button:hover {
   border-color: #cccccc;
 }
 
+/* Text color of the selected time for stats */
 .selected {
   color: #fff;
 }

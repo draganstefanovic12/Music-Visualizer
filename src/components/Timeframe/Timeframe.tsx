@@ -5,9 +5,10 @@ type TimeframeProps = {
   time: string;
 };
 
+//Selectable timeframes for API calls
 const TIMEFRAMES = [
   { child: "4 weeks", query: "short_term" },
-  { child: "6 months", query: "middle_term" },
+  { child: "6 months", query: "medium_term" },
   { child: "1+ year", query: "long_term" },
 ];
 
@@ -16,8 +17,8 @@ const Timeframe = ({ time, setTime }: TimeframeProps) => {
     <div>
       {TIMEFRAMES.map((timeframe, i) => (
         <Button
-          className={time === timeframe.child ? "selected" : ""}
-          onClick={() => setTime(timeframe.child)}
+          className={time === timeframe.query ? "selected" : ""}
+          onClick={() => setTime(timeframe.query)}
           key={i}
         >
           {timeframe.child}

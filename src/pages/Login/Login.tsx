@@ -1,4 +1,5 @@
-import { useToken } from "../context/TokenContext";
+import "./login.css";
+import { useToken } from "../../context/TokenContext";
 import { useEffect } from "react";
 
 const Login = () => {
@@ -14,6 +15,8 @@ const Login = () => {
     const hash = window.location.hash;
     let token = localStorage.getItem("token");
 
+    //When a user gets redirected here from the Spotify login page the app checks
+    //the hash and sets the token in localStorage for 1 hour
     if (!token && hash) {
       token = hash
         .substring(1)
@@ -31,7 +34,7 @@ const Login = () => {
 
   const loginLink = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
   return (
-    <div>
+    <div className="login-wrapper">
       <h1>Login with Spotify</h1>
       <a href={loginLink}>Log in</a>
     </div>
