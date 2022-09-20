@@ -8,6 +8,7 @@ const Login = () => {
   const REDIRECT_URI = "http://127.0.0.1:5173/Spotify-visualizer/login";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
+  const SCOPE = "user-top-read";
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -28,7 +29,7 @@ const Login = () => {
     dispatch({ type: "LOGIN", payload: token! });
   }, [dispatch]);
 
-  const loginLink = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`;
+  const loginLink = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
   return (
     <div>
       <h1>Login with Spotify</h1>

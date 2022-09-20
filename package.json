@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "deploy":"npm run build && git add dist -f && git commit -m'hosting'  && git subtree push --prefix dist origin gh-pages",
+    "deploy": "npm run build && git add dist -f && git commit -m'hosting'  && git subtree push --prefix dist origin gh-pages",
     "lint": "eslint --max-warnings=0 src",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.2",

@@ -1,0 +1,15 @@
+button {
+  padding: 0.5rem;
+  border: transparent 0.5px solid;
+  background-color: #272b2c;
+  color: #cccccc;
+  transition: 0.2s border-color;
+}
+
+button:hover {
+  border-color: #cccccc;
+}
+
+.selected {
+  color: #fff;
+}

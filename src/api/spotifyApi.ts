@@ -10,7 +10,15 @@ spotifyApi.interceptors.request.use((config) => {
   return config;
 });
 
+//Gets basic user info
 export const handleCurrentUser = async () => {
   const request = await spotifyApi.get("/me");
+  return request.data;
+};
+
+//Gets top 50 artists user listens to
+export const handleTopArtists = async () => {
+  const link = `/me/top/artists?limit=50&time_range=medium_term`;
+  const request = await spotifyApi.get(link);
   return request.data;
 };
