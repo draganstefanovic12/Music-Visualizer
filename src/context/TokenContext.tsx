@@ -23,12 +23,12 @@ export const useToken = () => {
 
 const initialState = {} as User;
 
-type ActionType = { type: "LOGIN"; payload: User } | { type: "LOGOUT" };
+type ActionType = { type: "LOGIN"; payload: string } | { type: "LOGOUT" };
 
 const tokenReducer = (user: typeof initialState, action: ActionType) => {
   switch (action.type) {
     case "LOGIN":
-      return (user = action.payload);
+      return (user = { ...user, token: action.payload, username: "" });
     case "LOGOUT":
       return (user = null);
   }
