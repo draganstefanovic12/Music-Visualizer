@@ -23,9 +23,7 @@ export const useToken = () => {
 
 const initialState = {} as Token;
 
-//Wrote the reducer because originally I planned to include user info here
-//But there's no need because there's only 1 page.
-
+//Wrote the reducer because originally I planned to include user info here aswell
 const tokenReducer = (token: typeof initialState, action: ActionType) => {
   switch (action.type) {
     case "LOGIN":

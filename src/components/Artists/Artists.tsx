@@ -21,7 +21,7 @@ const Artists = ({ term }: ArtistProps) => {
   );
 
   useEffect(() => {
-    //Map through artist genres, push them into array
+    //Map through artist genre arrays, push them into a single array
     const arr = [] as string[];
     topArtists &&
       topArtists.items.map((artist: Artist) =>
@@ -29,7 +29,6 @@ const Artists = ({ term }: ArtistProps) => {
       );
 
     //Create an array of genre objects
-    //length of this array will serve as data for the graph thats gonna be shown
     const result = Object.values(
       arr.reduce((o: ReduceObjects, n: string) => {
         //If an object doesn't exist with this name, it's gonna create the new one with the key "count" of 1
@@ -49,11 +48,12 @@ const Artists = ({ term }: ArtistProps) => {
   return (
     <div className="artist-images-lists-wrapper">
       <Chart genres={genres} />
+      <p>Your top artists are...</p>
       <ul className="artist-images">
         {topArtists.items.map((artist: Artist, i: number) => (
           <li key={i}>
             <p>{artist.name}</p>
-            <img src={artist.images[1].url} alt="artist-img" />
+            <img src={artist.images[0].url} alt="artist-img" />
           </li>
         ))}
       </ul>
