@@ -1,30 +1,43 @@
-ul {
+.artist-images {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
 }
 
 /* Position relative/absolute to place artist names into their containers */
-ul li {
+.artist-images li {
   position: relative;
   height: 30vh;
   flex-grow: 1;
 }
 
-ul li:last-child {
+.artist-images li:last-child {
   flex-grow: 10;
 }
 
-ul li p {
+.artist-images li p {
   position: absolute;
   font-weight: 700;
   color: #fff;
   bottom: 0;
 }
 
-ul li img {
+.artist-images li img {
   min-width: 100%;
   max-height: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+/* genre list css */
+.genre-list {
+  font-size: 14px;
+  padding: 1rem;
+}
+
+.genre-list > p {
+  padding-bottom: 0.2rem;
+}
+
+.canvas-wrapper {
+  height: 800px;
 }
