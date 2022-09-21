@@ -1,5 +1,5 @@
 import { TotalGenres } from "../../types";
-import { Pie } from "react-chartjs-2";
+import { Doughnut, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -12,6 +12,11 @@ const Chart = ({ genres }: ChartProps) => {
   const Labels = genres.map((genre: TotalGenres) => genre.name);
   const Count = genres.map((genre: TotalGenres) => genre.count);
 
+  const options = {
+    responsive: true,
+    aspectRatio: 1.5,
+  };
+
   const data = {
     labels: Labels,
     datasets: [
@@ -19,12 +24,12 @@ const Chart = ({ genres }: ChartProps) => {
         label: "Genres",
         data: Count,
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          "rgba(255, 99, 132, 0.3)",
+          "rgba(54, 162, 235, 0.3)",
+          "rgba(255, 206, 86, 0.3)",
+          "rgba(75, 192, 192, 0.3)",
+          "rgba(153, 102, 255, 0.3)",
+          "rgba(255, 159, 64, 0.3)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -34,14 +39,13 @@ const Chart = ({ genres }: ChartProps) => {
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)",
         ],
-        radius: 500,
       },
     ],
   };
 
   return (
     <div className="canvas-wrapper">
-      <Pie data={data} />
+      <Doughnut data={data} options={options} />
     </div>
   );
 };

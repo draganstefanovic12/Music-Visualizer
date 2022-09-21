@@ -1,3 +1,9 @@
+.artist-images-lists-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .artist-images {
   display: flex;
   flex-wrap: wrap;
@@ -29,15 +35,10 @@
 }
 
 /* genre list css */
-.genre-list {
-  font-size: 14px;
-  padding: 1rem;
-}
-
-.genre-list > p {
-  padding-bottom: 0.2rem;
-}
-
 .canvas-wrapper {
-  height: 800px;
+  position: relative;
+  min-height: auto;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
 }
