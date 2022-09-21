@@ -1,10 +1,16 @@
 import "./artists.css";
 import { Artist } from "../../types";
-import { useQuery } from "react-query";
 import { handleTopArtists } from "../../api/spotifyApi";
+import { useQuery } from "react-query";
 
-const Artists = () => {
-  const { isLoading, data: topArtists } = useQuery(["top"], handleTopArtists);
+type ArtistProps = {
+  term: string;
+};
+
+const Artists = ({ term }: ArtistProps) => {
+  const { isLoading, data: topArtists } = useQuery(["top", term], () =>
+    handleTopArtists(term)
+  );
 
   if (isLoading) {
     return <p>Loading...</p>;

@@ -13,12 +13,16 @@ const TIMEFRAMES = [
 ];
 
 const Timeframe = ({ time, setTime }: TimeframeProps) => {
+  const handleClick = (query: string) => {
+    setTime(query);
+  };
+
   return (
     <div>
       {TIMEFRAMES.map((timeframe, i) => (
         <Button
           className={time === timeframe.query ? "selected" : ""}
-          onClick={() => setTime(timeframe.query)}
+          onClick={() => handleClick(timeframe.query)}
           key={i}
         >
           {timeframe.child}

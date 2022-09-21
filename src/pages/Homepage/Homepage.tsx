@@ -6,7 +6,7 @@ import Artists from "../../components/Artists/Artists";
 import Timeframe from "../../components/Timeframe";
 
 const Homepage = () => {
-  const [time, setTime] = useState<string>("medium_term");
+  const [term, setTerm] = useState<string>("medium_term");
   const { isLoading, data: user } = useQuery(["user"], handleCurrentUser);
 
   if (isLoading) {
@@ -17,9 +17,9 @@ const Homepage = () => {
     <main>
       <div className="welcome-timeframe-wrapper">
         <h3>Welcome {user.display_name}</h3>
-        <Timeframe setTime={setTime} time={time} />
+        <Timeframe setTime={setTerm} time={term} />
       </div>
-      <Artists />
+      <Artists term={term} />
     </main>
   );
 };

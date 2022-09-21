@@ -17,8 +17,8 @@ export const handleCurrentUser = async () => {
 };
 
 //Gets top 50 artists user listens to
-export const handleTopArtists = async () => {
-  const link = `/me/top/artists?limit=50&time_range=short_term`;
+export const handleTopArtists = async (term = "short_term") => {
+  const link = `/me/top/artists?limit=50&time_range=${term}`;
   const request = await spotifyApi.get(link);
   return request.data;
 };
