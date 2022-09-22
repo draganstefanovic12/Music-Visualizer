@@ -6,6 +6,8 @@ import { Artist, ReduceObjects, TotalGenres } from "../../types";
 import Chart from "../Chart";
 import Tracks from "../Tracks";
 import Artists from "../Artists";
+import Spinner from "../Spinner/Spinner";
+import ContentType from "../ContentType";
 
 //3 possible terms, long, medium and long for 4 weeks, 1 month and 1+ year
 type ContentProps = {
@@ -14,6 +16,7 @@ type ContentProps = {
 
 const ContentWrapper = ({ term }: ContentProps) => {
   const [genres, setGenres] = useState<TotalGenres[]>([]);
+  const [contentType, setContentType] = useState<string>("artists");
   const { isLoading, data: topArtists } = useQuery(["top", term], () =>
     handleTopArtists(term)
   );
@@ -40,14 +43,15 @@ const ContentWrapper = ({ term }: ContentProps) => {
   }, [topArtists]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
     <div className="content-wrapper">
       <Chart genres={genres} />
-      <Artists topArtists={topArtists} />
-      <Tracks term={term} />
+      <ContentType contentType={contentType} setContentType={setContentType} />
+      {contentType === "artists" && <Artists topArtists={topArtists} />}
+      {contentType === "tracks" && <Tracks term={term} />}
     </div>
   );
 };

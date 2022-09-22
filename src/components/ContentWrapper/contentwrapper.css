@@ -2,6 +2,7 @@
 .content-ul {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 /* Position relative/absolute to place artist names into their containers */
@@ -27,4 +28,14 @@
   max-height: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+.content-ul-wrapper {
+  position: relative;
+}
+
+.content-ul-wrapper h2 {
+  position: absolute;
+  left: 0.5rem;
+  top: -2rem;
 }

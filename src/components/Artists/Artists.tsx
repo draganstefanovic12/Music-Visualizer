@@ -8,8 +8,8 @@ type ArtistsTypes = {
 
 const Artists = ({ topArtists }: ArtistsTypes) => {
   return (
-    <div>
-      <p>Your top artists are...</p>
+    <div className="content-ul-wrapper">
+      <h2>Your top artists</h2>
       <ul className="content-ul">
         {topArtists.items.map((artist: Artist, i: number) => (
           <li key={i}>

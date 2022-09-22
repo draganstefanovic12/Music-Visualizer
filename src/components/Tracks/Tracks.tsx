@@ -17,8 +17,8 @@ const Tracks = ({ term }: TracksProps) => {
   }
 
   return (
-    <div>
-      <p>Your top tracks</p>
+    <div className="content-ul-wrapper">
+      <h2>Your top tracks</h2>
       <ul className="content-ul">
         {topTracks.items.map((track: Track, i: number) => (
           <li key={i}>

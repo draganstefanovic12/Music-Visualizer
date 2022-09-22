@@ -3,6 +3,26 @@
   justify-content: space-between;
 }
 
+.selection-wrapper button:last-child {
+  border-bottom-right-radius: 0.3rem;
+}
+
+.selection-wrapper button:first-child {
+  border-top-right-radius: 0.3rem;
+}
+
+.selection-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70%;
+  left: 0%;
+}
+
+.timeframe {
+  transform: translateY(-7.5rem);
+}
+
 .user-name {
   position: absolute;
   top: 70%;
