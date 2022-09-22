@@ -3,6 +3,13 @@
   justify-content: space-between;
 }
 
+.user-name {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @keyframes fadein {
   0% {
     opacity: 0;

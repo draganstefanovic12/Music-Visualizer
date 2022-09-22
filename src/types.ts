@@ -13,6 +13,13 @@ export type Artist = {
   genres: string[];
 };
 
+export type Track = {
+  album: {
+    images: Image[];
+  };
+  name: string;
+};
+
 export type Image = {
   url: string;
 };
@@ -20,4 +27,8 @@ export type Image = {
 export type TotalGenres = {
   name: string;
   count: number;
+};
+
+export type ReduceObjects = {
+  [key: string]: TotalGenres;
 };

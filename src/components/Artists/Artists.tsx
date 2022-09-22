@@ -2,16 +2,12 @@ import "./artists.css";
 import { useQuery } from "react-query";
 import { handleTopArtists } from "../../api/spotifyApi";
 import { useEffect, useState } from "react";
-import { Artist, TotalGenres } from "../../types";
+import { Artist, ReduceObjects, TotalGenres } from "../../types";
 import Chart from "../Chart";
 
 //3 possible terms, long, medium and long for 4 weeks, 1 month and 1+ year
 type ArtistProps = {
   term: string;
-};
-
-type ReduceObjects = {
-  [key: string]: TotalGenres;
 };
 
 const Artists = ({ term }: ArtistProps) => {
