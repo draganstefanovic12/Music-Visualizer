@@ -15,16 +15,14 @@ const BrowserRouter = () => {
     <Router>
       <Routes>
         <Route
-          path="/Spotify-visualizer/login"
-          element={!token ? <Login /> : <Navigate to="/Spotify-visualizer/" />}
+          path="Genrefy/login"
+          element={!token ? <Login /> : <Navigate to="/" />}
         />
         <Route
-          path="/Spotify-visualizer/"
-          element={
-            token ? <Homepage /> : <Navigate to="/Spotify-visualizer/login" />
-          }
+          path="/"
+          element={token ? <Homepage /> : <Navigate to="Genrefy/login" />}
         />
-        <Route path="*" element={<Navigate to="/Spotify-visualizer/login" />} />
+        <Route path="*" element={<Navigate to="Genrefy/login" />} />
       </Routes>
     </Router>
   );

@@ -1,4 +1,8 @@
 /* This css file is being used for tracks and artists */
+.content-wrapper {
+  min-height: 5000px;
+}
+
 .content-ul {
   display: flex;
   flex-wrap: wrap;

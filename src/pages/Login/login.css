@@ -17,3 +17,10 @@ a {
 .login-wrapper p {
   font-size: 15px;
 }
+
+.github-logo {
+  position: absolute;
+  cursor: pointer;
+  top: 0.5rem;
+  right: 0.5rem;
+}

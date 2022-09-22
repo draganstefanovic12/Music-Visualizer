@@ -3,6 +3,7 @@
   justify-content: space-between;
 }
 
+/* Artists/Tracks selection on the left side of the screen */
 .selection-wrapper button:last-child {
   border-bottom-right-radius: 0.3rem;
 }
@@ -28,6 +29,11 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: fadein 1000ms 1 ease-in-out forwards;
+}
+
+.canvas-wrapper {
+  min-height: 110vh;
 }
 
 @keyframes fadein {
@@ -36,5 +42,49 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Phone optimization */
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .content-wrapper,
+  .canvas-wrapper {
+    min-height: auto;
+  }
+
+  .content-ul-wrapper h2 {
+    display: none;
+  }
+
+  .selection-wrapper {
+    top: 10rem;
+  }
+
+  /* Putting timeframes on the right */
+  .timeframe {
+    right: 0;
+    left: auto;
+    top: 17rem;
+  }
+
+  /* Reversing border radius */
+  .timeframe button:first-child {
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0;
+  }
+
+  .timeframe button:last-child {
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0;
+  }
+
+  .selection-wrapper > button {
+    font-size: 12px;
+    padding: 0.25rem;
   }
 }

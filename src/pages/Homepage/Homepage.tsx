@@ -18,6 +18,7 @@ const Homepage = () => {
     <main>
       <div className="welcome-timeframe-wrapper">
         <div className="user-name">
+          <p>stats for</p>
           <h3>{user.display_name}</h3>
         </div>
         <Timeframe setTime={setTerm} time={term} />
