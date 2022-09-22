@@ -12,8 +12,12 @@ spotifyApi.interceptors.request.use((config) => {
 
 //Gets basic user info
 export const handleCurrentUser = async () => {
-  const request = await spotifyApi.get("/me");
-  return request.data;
+  try {
+    const request = await spotifyApi.get("/me");
+    return request.data;
+  } catch (err) {
+    localStorage.clear();
+  }
 };
 
 //Gets top 50 artists user listened to
