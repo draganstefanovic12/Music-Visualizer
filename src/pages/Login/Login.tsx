@@ -35,8 +35,9 @@ const Login = () => {
   const loginLink = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
   return (
     <div className="login-wrapper">
-      <h1>Login with Spotify</h1>
-      <a href={loginLink}>Log in</a>
+      <h1>Spotify visualizer</h1>
+      <p>log in and find out your top artists and genres</p>
+      <a href={loginLink}>Log in with Spotify</a>
     </div>
   );
 };
