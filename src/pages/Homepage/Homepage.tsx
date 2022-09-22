@@ -2,9 +2,8 @@ import "./homepage.css";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { handleCurrentUser } from "../../api/spotifyApi";
-import Artists from "../../components/Artists/Artists";
+import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import Timeframe from "../../components/Timeframe";
-import Tracks from "../../components/Tracks";
 
 const Homepage = () => {
   const [term, setTerm] = useState<string>("medium_term");
@@ -22,8 +21,7 @@ const Homepage = () => {
         </div>
         <Timeframe setTime={setTerm} time={term} />
       </div>
-      <Artists term={term} />
-      <Tracks term={term} />
+      <ContentWrapper term={term} />
     </main>
   );
 };

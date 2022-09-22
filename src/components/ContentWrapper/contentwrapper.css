@@ -1,43 +1,30 @@
-.artist-images-lists-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.artist-images {
+/* This css file is being used for tracks and artists */
+.content-ul {
   display: flex;
   flex-wrap: wrap;
 }
 
 /* Position relative/absolute to place artist names into their containers */
-.artist-images li {
+.content-ul li {
   position: relative;
   height: 40vh;
   flex-grow: 1;
 }
 
-.artist-images li:last-child {
+.content-ul li:last-child {
   flex-grow: 10;
 }
 
-.artist-images li p {
+.content-ul li p {
   position: absolute;
   font-weight: 700;
   color: #fff;
   bottom: 0;
 }
 
-.artist-images li img {
+.content-ul li img {
   min-width: 100%;
   max-height: 100%;
   object-fit: cover;
   vertical-align: bottom;
-}
-
-/* Genre list css */
-.canvas-wrapper {
-  position: relative;
-  min-height: auto;
-  width: 100%;
-  display: flex;
-  flex-grow: 1;
 }

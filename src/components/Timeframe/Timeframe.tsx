@@ -1,19 +1,20 @@
+import { Term } from "../../types";
 import Button from "../Button";
 
 type TimeframeProps = {
-  setTime: React.Dispatch<React.SetStateAction<string>>;
+  setTime: React.Dispatch<React.SetStateAction<Term>>;
   time: string;
 };
 
 //Selectable timeframes for API calls
 const TIMEFRAMES = [
-  { child: "4 weeks", query: "short_term" },
-  { child: "6 months", query: "medium_term" },
-  { child: "1+ year", query: "long_term" },
+  { child: "4 weeks", query: "short_term" as Term },
+  { child: "6 months", query: "medium_term" as Term },
+  { child: "1+ year", query: "long_term" as Term },
 ];
 
 const Timeframe = ({ time, setTime }: TimeframeProps) => {
-  const handleClick = (query: string) => {
+  const handleClick = (query: Term) => {
     setTime(query);
   };
 

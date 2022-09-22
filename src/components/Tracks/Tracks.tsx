@@ -1,4 +1,4 @@
-import "../Artists/artists.css";
+import "../ContentWrapper/contentwrapper.css";
 import { Track } from "../../types";
 import { useQuery } from "react-query";
 import { handleTopTracks } from "../../api/spotifyApi";
@@ -17,13 +17,13 @@ const Tracks = ({ term }: TracksProps) => {
   }
 
   return (
-    <div className="artist-images-lists-wrapper">
+    <div>
       <p>Your top tracks</p>
-      <ul className="artist-images">
+      <ul className="content-ul">
         {topTracks.items.map((track: Track, i: number) => (
           <li key={i}>
             <p>{track.name}</p>
-            <img src={track.album.images[0].url} alt="artist-img" />
+            <img src={track.album.images[0].url} alt="content-img" />
           </li>
         ))}
       </ul>
