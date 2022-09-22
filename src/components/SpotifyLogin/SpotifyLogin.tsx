@@ -9,7 +9,7 @@ const SpotifyLogin = () => {
   const { dispatch } = useToken();
 
   const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-  const REDIRECT_URI = "https://draganstefanovic12.github.io/Genrefy";
+  const REDIRECT_URI = "https://draganstefanovic12.github.io/Genrefy/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPE = "user-top-read";
