@@ -15,14 +15,13 @@ const BrowserRouter = () => {
     <Router>
       <Routes>
         <Route
-          path="/login"
-          element={!token ? <Login /> : <Navigate to="/" />}
+          path="Genrefy/"
+          element={token ? <Homepage /> : <Navigate to="Genrefy/login" />}
         />
         <Route
-          path="/"
-          element={token ? <Homepage /> : <Navigate to="/login" />}
+          path="Genrefy/login"
+          element={token ? <Navigate to="Genrefy/" /> : <Login />}
         />
-        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
   );
