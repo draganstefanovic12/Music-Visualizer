@@ -9,7 +9,7 @@ const Login = () => {
   const { dispatch } = useToken();
 
   const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-  const REDIRECT_URI = "http://127.0.0.1:5173/Genrefy/login";
+  const REDIRECT_URI = "https://draganstefanovic12.github.io/Genrefy/login";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPE = "user-top-read";
