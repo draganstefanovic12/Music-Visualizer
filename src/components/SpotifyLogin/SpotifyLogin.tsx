@@ -1,15 +1,15 @@
-import "./login.css";
+import "./spotifylogin.css";
 import { useToken } from "../../context/TokenContext";
 import { useEffect } from "react";
 import githubLogo from "../../assets/images/github-icon.svg";
-import Chart from "../../components/Chart";
+import Chart from "../Chart";
 import genres from "../../assets/placeholderGenres";
 
-const Login = () => {
+const SpotifyLogin = () => {
   const { dispatch } = useToken();
 
   const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-  const REDIRECT_URI = "https://draganstefanovic12.github.io/Genrefy/login";
+  const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPE = "user-top-read";
@@ -58,4 +58,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SpotifyLogin;
