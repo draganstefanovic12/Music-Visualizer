@@ -13,4 +13,4 @@ Currently only in development mode. I've sent a request to Spotify to extend the
 
 Preview of the app:
 
-![](https://cdn.discordapp.com/attachments/497806782085726208/1022682243258388541/ezgif-5-e9038fad1a.gif)
+<img src="https://cdn.discordapp.com/attachments/497806782085726208/1022682243258388541/ezgif-5-e9038fad1a.gif"/>
