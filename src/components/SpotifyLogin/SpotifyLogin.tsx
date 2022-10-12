@@ -43,7 +43,7 @@ const SpotifyLogin = () => {
   return (
     <>
       <div className="login-wrapper">
-        <h1>Spotify visualizer</h1>
+        <h1>usic visualizer</h1>
         <p>find out your top artists and genres</p>
         <a href={loginLink}>Log in with Spotify</a>
       </div>

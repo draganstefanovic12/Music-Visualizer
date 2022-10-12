@@ -2,9 +2,9 @@ import "./homepage.css";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { handleCurrentUser } from "../../api/spotifyApi";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import Timeframe from "../../components/Timeframe";
 import Spinner from "../../components/Spinner/Spinner";
+import Timeframe from "../../components/Timeframe";
+import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 
 const Homepage = () => {
   const [term, setTerm] = useState<string>("medium_term");

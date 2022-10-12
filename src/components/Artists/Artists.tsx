@@ -13,7 +13,7 @@ const Artists = ({ topArtists }: ArtistsTypes) => {
       <ul className="content-ul">
         {topArtists.items.map((artist: Artist, i: number) => (
           <li key={i}>
-            <p>{artist.name}</p>
+            {/* <p>{artist.name}</p> */}
             <img src={artist.images[0].url} alt="artist-img" />
           </li>
         ))}
