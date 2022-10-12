@@ -1,4 +1,4 @@
-# Genrefy
+# Music Visualizer
 Small app that visualizes genres with a pie chart and shows you a layout of images of your top artists/songs. 
 
 Tech stack used:
