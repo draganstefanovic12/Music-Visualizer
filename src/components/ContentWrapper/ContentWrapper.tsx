@@ -17,9 +17,7 @@ type ContentProps = {
 const ContentWrapper = ({ term }: ContentProps) => {
   const [genres, setGenres] = useState<TotalGenres[]>([]);
   const [contentType, setContentType] = useState<string>("artists");
-  const { isLoading, data: topArtists } = useQuery(["top", term], () =>
-    handleTopArtists(term)
-  );
+  const { isLoading, data: topArtists } = useQuery(["top", term], () => handleTopArtists(term));
 
   useEffect(() => {
     //Map through artist genre arrays, push them into a single array
@@ -49,9 +47,9 @@ const ContentWrapper = ({ term }: ContentProps) => {
   return (
     <div className="content-wrapper">
       <Chart genres={genres} />
-      <ContentType contentType={contentType} setContentType={setContentType} />
-      {contentType === "artists" && <Artists topArtists={topArtists} />}
-      {contentType === "tracks" && <Tracks term={term} />}
+      {/* <ContentType contentType={contentType} setContentType={setContentType} /> */}
+      {/* {contentType === "artists" && <Artists topArtists={topArtists} />} */}
+      {/* {contentType === "tracks" && <Tracks term={term} />} */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const SpotifyLogin = () => {
   const { dispatch } = useToken();
 
   const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-  const REDIRECT_URI = "https://draganstefanovic12.github.io/Genrefy/";
+  const REDIRECT_URI = "http://127.0.0.1:5173/login";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPE = "user-top-read";
@@ -43,16 +43,11 @@ const SpotifyLogin = () => {
   return (
     <>
       <div className="login-wrapper">
-        <h1>usic visualizer</h1>
+        <h1>Music visualizer</h1>
         <p>find out your top artists and genres</p>
         <a href={loginLink}>Log in with Spotify</a>
       </div>
-      <img
-        onClick={handleGithub}
-        src={githubLogo}
-        alt="github-logo"
-        className="github-logo"
-      />
+      <img onClick={handleGithub} src={githubLogo} alt="github-logo" className="github-logo" />
       <Chart genres={genres} />
     </>
   );
