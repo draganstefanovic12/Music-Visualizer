@@ -7,8 +7,6 @@ Tech stack used:
 - ChartJS
 - React Query
 
-Currently only in development mode. I've sent a request to Spotify to extend the quota and make it available without assigning users manually in Spotify dashboard.
-
 <a href="">Live project</a>
 
 Preview of the app:
