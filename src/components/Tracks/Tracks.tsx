@@ -8,9 +8,7 @@ type TracksProps = {
 };
 
 const Tracks = ({ term }: TracksProps) => {
-  const { isLoading, data: topTracks } = useQuery(["tracks", term], () =>
-    handleTopTracks(term)
-  );
+  const { isLoading, data: topTracks } = useQuery(["tracks", term], () => handleTopTracks(term));
 
   if (isLoading) {
     return <p>Loading...</p>;

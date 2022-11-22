@@ -23,9 +23,7 @@ const ContentWrapper = ({ term }: ContentProps) => {
     //Map through artist genre arrays, push them into a single array
     const arr = [] as string[];
     topArtists &&
-      topArtists.items.map((artist: Artist) =>
-        artist.genres.map((genre: string) => arr.push(genre))
-      );
+      topArtists.items.map((artist: Artist) => artist.genres.map((genre: string) => arr.push(genre)));
 
     //Create an array of genre objects
     const result = Object.values(
@@ -47,9 +45,9 @@ const ContentWrapper = ({ term }: ContentProps) => {
   return (
     <div className="content-wrapper">
       <Chart genres={genres} />
-      {/* <ContentType contentType={contentType} setContentType={setContentType} /> */}
-      {/* {contentType === "artists" && <Artists topArtists={topArtists} />} */}
-      {/* {contentType === "tracks" && <Tracks term={term} />} */}
+      <ContentType contentType={contentType} setContentType={setContentType} />
+      {contentType === "artists" && <Artists topArtists={topArtists} />}
+      {contentType === "tracks" && <Tracks term={term} />}
     </div>
   );
 };
