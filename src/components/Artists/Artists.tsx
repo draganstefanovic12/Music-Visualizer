@@ -7,17 +7,17 @@ type ArtistsTypes = {
 };
 
 const Artists = ({ topArtists }: ArtistsTypes) => {
+  const artists = topArtists.items.map((artist: Artist, i: number) => (
+    <li key={i}>
+      <p>{artist.name}</p>
+      <img src={artist.images[0].url} alt="artist-img" />
+    </li>
+  ));
+
   return (
     <div className="content-ul-wrapper">
       <h2>Your top artists</h2>
-      <ul className="content-ul">
-        {topArtists.items.map((artist: Artist, i: number) => (
-          <li key={i}>
-            {/* <p>{artist.name}</p> */}
-            <img src={artist.images[0].url} alt="artist-img" />
-          </li>
-        ))}
-      </ul>
+      <ul className="content-ul">{artists}</ul>
     </div>
   );
 };
