@@ -20,7 +20,7 @@ const Tracks = ({ term }: TracksProps) => {
       <ul className="content-ul">
         {topTracks.items.map((track: Track, i: number) => (
           <li key={i}>
-            {/* <p>{track.name}</p> */}
+            <p>{track.name}</p>
             <img src={track.album.images[0].url} alt="content-img" />
           </li>
         ))}

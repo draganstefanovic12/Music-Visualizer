@@ -7,12 +7,14 @@ type ArtistsTypes = {
 };
 
 const Artists = ({ topArtists }: ArtistsTypes) => {
-  const artists = topArtists.items.map((artist: Artist, i: number) => (
-    <li key={i}>
-      <p>{artist.name}</p>
-      <img src={artist.images[0].url} alt="artist-img" />
-    </li>
-  ));
+  const artists = topArtists.items
+    .filter((artist) => artist.images.length > 0)
+    .map((artist: Artist, i: number) => (
+      <li key={i}>
+        <p>{artist.name}</p>
+        <img src={artist.images[0].url} alt="artist-img" />
+      </li>
+    ));
 
   return (
     <div className="content-ul-wrapper">

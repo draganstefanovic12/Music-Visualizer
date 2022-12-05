@@ -1,13 +1,14 @@
 import "./contentwrapper.css";
 import { useQuery } from "react-query";
 import { handleTopArtists } from "../../api/spotifyApi";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Artist, ReduceObjects, TotalGenres } from "../../types";
 import Chart from "../Chart";
-import Tracks from "../Tracks";
-import Artists from "../Artists";
 import Spinner from "../Spinner/Spinner";
 import ContentType from "../ContentType";
+
+const Artists = lazy(() => import("../Artists"));
+const Tracks = lazy(() => import("../Tracks"));
 
 //3 possible terms, long, medium and long for 4 weeks, 1 month and 1+ year
 type ContentProps = {
@@ -46,8 +47,10 @@ const ContentWrapper = ({ term }: ContentProps) => {
     <div className="content-wrapper">
       <Chart genres={genres} />
       <ContentType contentType={contentType} setContentType={setContentType} />
-      {contentType === "artists" && <Artists topArtists={topArtists} />}
-      {contentType === "tracks" && <Tracks term={term} />}
+      <Suspense fallback={<Spinner />}>
+        {contentType === "artists" && <Artists topArtists={topArtists} />}
+        {contentType === "tracks" && <Tracks term={term} />}
+      </Suspense>
     </div>
   );
 };
